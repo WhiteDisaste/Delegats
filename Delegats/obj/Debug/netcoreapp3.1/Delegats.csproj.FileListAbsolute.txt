@@ -1,0 +1,12 @@
+/Users/admin/reviliell/Delegats/Delegats/bin/Debug/netcoreapp3.1/Delegats.deps.json
+/Users/admin/reviliell/Delegats/Delegats/bin/Debug/netcoreapp3.1/Delegats.runtimeconfig.json
+/Users/admin/reviliell/Delegats/Delegats/bin/Debug/netcoreapp3.1/Delegats.runtimeconfig.dev.json
+/Users/admin/reviliell/Delegats/Delegats/bin/Debug/netcoreapp3.1/Delegats.dll
+/Users/admin/reviliell/Delegats/Delegats/bin/Debug/netcoreapp3.1/Delegats.pdb
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.csprojAssemblyReference.cache
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.csproj.CoreCompileInputs.cache
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.AssemblyInfoInputs.cache
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.AssemblyInfo.cs
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.dll
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.pdb
+/Users/admin/reviliell/Delegats/Delegats/obj/Debug/netcoreapp3.1/Delegats.genruntimeconfig.cache
