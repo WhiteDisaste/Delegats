@@ -11,14 +11,20 @@ namespace Delegats.Calculator
             {
                 { "+", "сложение" },
                 { "//", "двойное деление (x / y / y)" },
-                { "|/|", "возврат модуля от деления"}
+                { "|/|", "возврат модуля от деления"},
+                {"*", "умножение"},
+                {"-","вычитание"},
+                 {"%","остаток от деления"}
             };
             
             _operations = new Dictionary<string, OperationDelegate>()
             {
                 { "+", Summa},
                 {"//", DoubleDivision},
-                {"|/|", ModuleDivision}
+                {"|/|", ModuleDivision},
+                {"-", Subtraction},
+                {"*", Multiplication},
+                {"%", RemainderOfTheDivision}
             };
         }
 
@@ -69,6 +75,18 @@ namespace Delegats.Calculator
         {
             return x + y;
         }
+         private double Subtraction(double x, double y)
+        {
+            return x - y;
+        }
+         private double Multiplication(double x, double y)
+        {
+            return x * y;
+        }
+         private double RemainderOfTheDivision(double x, double y)
+        {
+            return x % y;
+        }
         
         private double DoubleDivision(double x, double y)
         {
@@ -81,5 +99,7 @@ namespace Delegats.Calculator
             var divisionResult = x / y;
             return Math.Abs(divisionResult);
         }
+
+
     }
 }
