@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Globalization;
 using Delegats.Calculator;
+using Delegats.Weapon;
 
 namespace Delegats
 {
     class Program
     {
+        private static WeaponClass _weaponClass = new WeaponClass();
+
         private static CalculatorClass _calculatorClass = new CalculatorClass();
         
         static void Main(string[] args)
@@ -21,6 +24,15 @@ namespace Delegats
 
             _calculatorClass.PerformOperation(operationKey, x, y);
 
+            Console.WriteLine("Можно выбрать оружия, виды оружия есть:");
+            _weaponClass.ShowAllOperations();
+
+            
+            var operationKey = Console.ReadLine();
+            var a = Convert.ToString(Console.ReadLine());
+            var b = Convert.ToString(Console.ReadLine());
+            
+             _weaponClass.PerformOperation(operationKey, x, y);
             Console.ReadLine();
         }
 
