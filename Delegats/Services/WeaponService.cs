@@ -1,46 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Danya.Delegats.Services
+namespace Delegats.Services
 {
     public class WeaponService
     {
         /// <summary>
         /// Cписок названий операций
         /// </summary>
-        public Dictionary<string, string> _operationName;
+        public Dictionary<string, string> _operationNames;
+
         /// <summary>
         /// Делегат одной операции
         /// </summary>
-        public delegate string OperationDelegate();
+        public delegate void GetSoundDelegate(out string result);
+
         /// <summary>
         /// Список операций
         /// </summary>
-        public Dictionary<string, OperationDelegate> _operationsSound;
+        public Dictionary<string, GetSoundDelegate> _getSoundDelegates;
 
-        public delegate string SoundDelegate();
+
         /// <summary>
         /// Конструктор
         /// </summary>
         public WeaponService()
         {
-
-            //string result;
-            _operationName = new Dictionary<string, string>()
+            _operationNames = new Dictionary<string, string>()
             {
                 { "+", "выстрел из лука" },
                 { "-", "выстрел из рогатки" },
-                { "/", "выстрел из ружья"}
+                { "/", "выстрел из ружья" }
             };
 
-            // _operationsSound = new Dictionary<string, string>()
-            //{
-
-
-            //{"+", GetOnionSound(result)},
-            //{"-", GetSlingshotSound},
-            //{"/", GetGunSound}
-            //};
+            _getSoundDelegates = new Dictionary<string, GetSoundDelegate>()
+            {
+                { "+", GetOnionSound },
+                { "-", GetSlingshotSound },
+                { "/", GetGunSound }
+            };
         }
 
         /// <summary>
@@ -48,7 +46,7 @@ namespace Danya.Delegats.Services
         /// </summary>
         public void ShowAllOperations()
         {
-            foreach (var operation in _operationName)
+            foreach (var operation in _operationNames)
             {
                 Console.WriteLine($"{operation.Key} - это {operation.Value}");
             }
@@ -61,7 +59,7 @@ namespace Danya.Delegats.Services
         /// <returns></returns>
         public string GetOperationName(string op)
         {
-            return _operationName[op];
+            return _operationNames[op];
         }
 
         /// <summary>
@@ -76,26 +74,26 @@ namespace Danya.Delegats.Services
             //проверить введенную операцию
             if (string.IsNullOrWhiteSpace(op))
             {
-
                 throw new ArgumentException("не ввели символ");
             }
 
-            if (a >= b)
+            if (a < b)
             {
                 throw new ArgumentException("Количество проделанных выстрелов не может превышать количество снарядов");
             }
-            if (!_operationsSound.ContainsKey(op))
+
+            if (!_getSoundDelegates.ContainsKey(op))
             {
                 throw new ArgumentException("нет такого действия");
             }
 
-            //подсчет результата
-            var result = _operationsSound[op]();
+            _getSoundDelegates[op](out string result);
+
             //вывод результата
             Console.WriteLine(
-                $"Вы проделали {_operationName[op]} {b} раз и у вас осталось {a - b}. При выстрелах был звук {result}");
-
+                $"Вы проделали {_operationNames[op]} {b} раз и у вас осталось {a - b}. При выстрелах был звук {result}");
         }
+
 
         /// <summary>
         /// Звук выстрела из лука
@@ -103,9 +101,7 @@ namespace Danya.Delegats.Services
         /// <returns>звук</returns>
         private void GetOnionSound(out string result)
         {
-
             result = "фью";
-
         }
 
         /// <summary>

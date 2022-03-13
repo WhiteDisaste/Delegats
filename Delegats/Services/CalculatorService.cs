@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Danya.Delegats.Services
+namespace Delegats.Services
 {
     public class CalculatorService
     {
