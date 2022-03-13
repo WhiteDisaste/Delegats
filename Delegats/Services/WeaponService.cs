@@ -16,28 +16,33 @@ namespace Danya.Delegats.Services
         /// <summary>
         /// Список операций
         /// </summary>
-        public Dictionary<string, OperationDelegate> _operations;
-        
+        public Dictionary<string, OperationDelegate> _operationsSound;
+
+        public delegate string SoundDelegate();
         /// <summary>
         /// Конструктор
         /// </summary>
         public WeaponService()
         {
+
+            //string result;
             _operationName = new Dictionary<string, string>()
             {
                 { "+", "выстрел из лука" },
                 { "-", "выстрел из рогатки" },
                 { "/", "выстрел из ружья"}
             };
-            
-            _operations = new Dictionary<string, OperationDelegate>()
-            {
-                {"+", Onion},
-                {"-", Slingshot},
-                {"/", Gun}
-            };
+
+            // _operationsSound = new Dictionary<string, string>()
+            //{
+
+
+            //{"+", GetOnionSound(result)},
+            //{"-", GetSlingshotSound},
+            //{"/", GetGunSound}
+            //};
         }
-        
+
         /// <summary>
         /// Вывод всех операций
         /// </summary>
@@ -48,7 +53,7 @@ namespace Danya.Delegats.Services
                 Console.WriteLine($"{operation.Key} - это {operation.Value}");
             }
         }
-        
+
         /// <summary>
         /// Метод получения операций
         /// </summary>
@@ -58,7 +63,7 @@ namespace Danya.Delegats.Services
         {
             return _operationName[op];
         }
-        
+
         /// <summary>
         /// Метод выполнения операции
         /// </summary>
@@ -71,47 +76,54 @@ namespace Danya.Delegats.Services
             //проверить введенную операцию
             if (string.IsNullOrWhiteSpace(op))
             {
+
                 throw new ArgumentException("не ввели символ");
             }
 
-            if (!_operations.ContainsKey(op))
+            if (a >= b)
+            {
+                throw new ArgumentException("Количество проделанных выстрелов не может превышать количество снарядов");
+            }
+            if (!_operationsSound.ContainsKey(op))
             {
                 throw new ArgumentException("нет такого действия");
             }
 
             //подсчет результата
-            var result = _operations[op]();
+            var result = _operationsSound[op]();
             //вывод результата
             Console.WriteLine(
-                $"Вы проделали {_operationName[op]} {b} раз и у вас осталось {a-b}. При выстрелах был звук {result}");
-            
+                $"Вы проделали {_operationName[op]} {b} раз и у вас осталось {a - b}. При выстрелах был звук {result}");
+
         }
 
         /// <summary>
         /// Звук выстрела из лука
         /// </summary>
         /// <returns>звук</returns>
-        private string Onion()
-        { 
-            return "фью";
+        private void GetOnionSound(out string result)
+        {
+
+            result = "фью";
+
         }
-        
+
         /// <summary>
         /// Звук выстрела из рогатки
         /// </summary>
         /// <returns>звук</returns>
-        private string Slingshot()
+        private void GetSlingshotSound(out string result)
         {
-            return "пиу";
+            result = "пиу";
         }
-        
+
         /// <summary>
         /// Звук выстрела из ружья
         /// </summary>
         /// <returns>звук</returns>
-        private string Gun()
+        private void GetGunSound(out string result)
         {
-            return "бам";
+            result = "бам";
         }
     }
 }

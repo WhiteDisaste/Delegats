@@ -1,33 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "/Users/admin/reviliell/Delegats/Delegats/Delegats.csproj": {}
+    "C:\\Users\\ger-m\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\Delegats.csproj": {}
   },
   "projects": {
-    "/Users/admin/reviliell/Delegats/Delegats/Delegats.csproj": {
+    "C:\\Users\\ger-m\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\Delegats.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/admin/reviliell/Delegats/Delegats/Delegats.csproj",
+        "projectUniqueName": "C:\\Users\\ger-m\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\Delegats.csproj",
         "projectName": "Delegats",
-        "projectPath": "/Users/admin/reviliell/Delegats/Delegats/Delegats.csproj",
-        "packagesPath": "/Users/admin/.nuget/packages/",
-        "outputPath": "/Users/admin/reviliell/Delegats/Delegats/obj/",
+        "projectPath": "C:\\Users\\ger-m\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\Delegats.csproj",
+        "packagesPath": "C:\\Users\\ger-m\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ger-m\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "/Users/admin/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ger-m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "http://nexus.action-media.ru/repository/nuget/": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -39,6 +44,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -54,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
