@@ -1,11 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Delegats.Calculator
+namespace Danya.Delegats.Services
 {
-    public class CalculatorClass
+    public class CalculatorService
     {
-        public CalculatorClass()
+        /// <summary>
+        /// Список операций
+        /// </summary>
+        public Dictionary<string, string> _operationName;
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public delegate double OperationDelegate(double x, double y);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public Dictionary<string, OperationDelegate> _operations;
+
+        
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public CalculatorService()
         {
             _operationName = new Dictionary<string, string>()
             {
@@ -29,12 +48,9 @@ namespace Delegats.Calculator
         }
 
 
-        public Dictionary<string, string> _operationName;
-        
-        public delegate double OperationDelegate(double x, double y);
-        public Dictionary<string, OperationDelegate> _operations;
-
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void ShowAllOperations()
         {
             foreach (var operation in _operationName)
@@ -43,11 +59,23 @@ namespace Delegats.Calculator
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="op"></param>
+        /// <returns></returns>
         public string GetOperationName(string op)
         {
             return _operationName[op];
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="op">символ операции</param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void PerformOperation(string op, double x, double y)
         {
             //проверить введенную операцию
@@ -56,7 +84,7 @@ namespace Delegats.Calculator
                 throw new ArgumentException("не ввели символ");
             }
 
-            if (!_operations.ContainsKey("op"))
+            if (!_operations.ContainsKey(op))
             {
                 throw new ArgumentException("нет такой операции");
             }
@@ -69,11 +97,24 @@ namespace Delegats.Calculator
             
             //вывод результата
             Console.WriteLine($"result операции {_operationName[op]} равен {result}");
+
+            x = 1;
+            y = 2;
+            var xxx = Summa(x, y);//4
+            //x = 2
+            
+            var uuu = Multiplication(x, y); //2
         }
 
-        private double Summa(double x, double y)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        private double Summa(double oper1, double oper2)
         {
-            return x + y;
+            return oper1 + oper2;
         }
          private double Subtraction(double x, double y)
         {
@@ -99,7 +140,6 @@ namespace Delegats.Calculator
             var divisionResult = x / y;
             return Math.Abs(divisionResult);
         }
-
 
     }
 }
