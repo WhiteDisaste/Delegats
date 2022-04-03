@@ -38,33 +38,8 @@ namespace Delegats
             Console.ReadLine();
         }
 
-        void ShowOperationInfo(string culture, string name)
-        {
-            var operationInfoRu = new Dictionary<string, string>()
-            {
-                { "сложение", "к 1му числу прибавить 2ое число" },
-                { "двойное деление (x / y / y)", "...." },
-                { "возврат модуля от деления", "поделить, потом взять модуль числа"}
-            };
-            var operationInfoUk = new Dictionary<string, string>()
-            {
-                { "сложение", "по-укр" },
-                { "двойное деление (x / y / y)", "...." },
-                { "возврат модуля от деления", "по-укр"}
-            };
-
-            if (culture == "Ru")
-            {
-                Console.WriteLine(operationInfoRu[name]);
-            }
-            else if (culture == "Uk")
-            {
-                Console.WriteLine(operationInfoUk[name]);
-            }
-            else if (culture == "En")
-            {
-                Console.WriteLine(operationInfoUk[name]);
-            }
-        }
+        
+       
+        
     }
 }
