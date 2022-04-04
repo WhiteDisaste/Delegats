@@ -6,75 +6,58 @@ namespace Delegats.Services
     public class CalculatorService
     {
         /// <summary>
+        /// Cписок названий операций
+        /// </summary>
+        public Dictionary<string, string> _operationNames;
+        /// <summary>
         /// Список операций
         /// </summary>
-        public Dictionary<string, OperationNameDelegate> _operationName;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public delegate double OperationDelegate(double x, double y);
-
-        public delegate string OperationNameDelegate(string oper);
-
-
-        //public Dictionary<string, OperationNameDelegate> _operationName;
-        /// <summary>
-        /// 
-        /// </summary>
         public Dictionary<string, OperationDelegate> _operations;
-
+        
+        /// <summary>
+        /// Объявление делегата
+        /// </summary>
+        public delegate double OperationDelegate(double a, double b);
 
         /// <summary>
         /// Constructor
         /// </summary>
         public CalculatorService()
         {
-            _operationName = new Dictionary<string, OperationNameDelegate>()
-            {
-              { "+", OperationSumma},
-               { "//", OperationDoubleDivision},
-               { "|/|", OperationModuleDivision},
-               {"*", OperationMultiplication},
-              {"-",OperationSubtraction},
-                 {"%",OperationRemainderOfTheDivision}
-            };
-
-            _operations = new Dictionary<string, OperationDelegate>()
+            _operations = new Dictionary<string,OperationDelegate>()
             {
                 { "+", Summa},
-                {"//", DoubleDivision},
-                {"|/|", ModuleDivision},
-                {"-", Subtraction},
-                {"*", Multiplication},
-                {"%", RemainderOfTheDivision}
+                { "-", Subtraction},
+                {"/",Division },
+                { "//", DoubleDivision},
+                { "*", Multiplication},
+                { "%", RemainderOfTheDivision},
+                { "|/|", ModuleDivision}               
+            };
+            _operationNames = new Dictionary<string, string>()
+            {
+                { "+", "Сумма"},
+                { "-", "Вычитание"},
+                { "//","Двойное деление" },
+                { "/","Деление" },
+                { "*", "Умножение"},
+                { "%", "Остаток от деления"},
+                { "|/|", "Деление по модулю"}
             };
         }
 
-
         /// <summary>
-        /// 
+        /// Вывод всех операций
         /// </summary>
         public void ShowAllOperations()
         {
-            foreach (var operation in _operationName)
+            foreach (var operation in _operationNames)
             {
                 Console.WriteLine($"{operation.Key} - это {operation.Value}");
             }
         }
-
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="op"></param>
-        /// <returns></returns>
-        // public string GetOperationName(string op)
-        // {
-        //return _operationName[op];
-        // }
-
-        /// <summary>
-        /// 
+        /// проверка и вывод результата
         /// </summary>
         /// <param name="op">символ операции</param>
         /// <param name="x"></param>
@@ -92,89 +75,44 @@ namespace Delegats.Services
             {
                 throw new ArgumentException("нет такой операции");
             }
-
-            //проверить x и y
-            //
-
-            //подсчет результата
-            var result = _operations[op](x, y);
+            double result = _operations[op](x, y);
 
             //вывод результата
-            Console.WriteLine($"result операции {_operationName[op]} равен {result}");
-
-            x = 1;
-            y = 2;
-            var xxx = Summa(x, y);//4
-                                  //x = 2
-
-            var uuu = Multiplication(x, y); //2
+            Console.WriteLine($"результат операции равен {result}");
         }
 
         /// <summary>
-        /// 
+        /// метод суммы
+        /// </summary>        
+        private double Summa(double x, double y) => x + y;
+        
+        /// <summary>
+        /// метод вычитания
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
-        private double Summa(double oper1, double oper2)
-        {
-            return oper1 + oper2;
-        }
-        private double Subtraction(double x, double y)
-        {
-            return x - y;
-        }
-        private double Multiplication(double x, double y)
-        {
-            return x * y;
-        }
-        private double RemainderOfTheDivision(double x, double y)
-        {
-            return x % y;
-        }
-
-        private double DoubleDivision(double x, double y)
-        {
-            var divisionResult = x / y;
-            return divisionResult / y;
-        }
-
-        private double ModuleDivision(double x, double y)
-        {
-            var divisionResult = x / y;
-            return Math.Abs(divisionResult);
-        }
-        private string OperationSumma(string oper)
-        {
-            return oper = "сложение";
-
-        }
-        private string OperationSubtraction(string oper)
-        {
-            return oper = "вычитание";
-
-        }
-        private string OperationMultiplication(string oper)
-        {
-            return oper = "умножение";
-
-        }
-        private string OperationRemainderOfTheDivision(string oper)
-        {
-            return oper = "остаток от деления";
-
-        }
-        private string OperationDoubleDivision(string oper)
-        {
-            return oper = "двойное деление (x / y / y)";
-
-        }
-
-        private string OperationModuleDivision(string oper)
-        {
-            return oper = "возврат модуля от деления";
-
-        }
-
+        private double Subtraction(double x, double y) => x - y;
+        
+        /// <summary>
+        /// метод умножения
+        /// </summary>
+        private double Multiplication(double x, double y)=>x*y;
+        
+        /// <summary>
+        /// метод деления
+        /// </summary>
+        private double Division(double x, double y) => x / y;
+        /// <summary>
+        /// метод отсаток от деления
+        /// </summary>
+        private double RemainderOfTheDivision(double x, double y)=>x % y;     
+         
+        /// <summary>
+        /// метод двойного деления
+        /// </summary>
+        private double DoubleDivision(double x, double y)=>x/y/y;
+         
+        /// <summary>
+        /// метод деление по модулю
+        /// </summary>
+        private double ModuleDivision(double x, double y)=>Math.Abs(x/y);
     }
 }
