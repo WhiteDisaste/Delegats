@@ -23,3 +23,17 @@ C:\Users\ger-m\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3
 C:\Users\ger-m\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.dll
 C:\Users\ger-m\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.pdb
 C:\Users\ger-m\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.genruntimeconfig.cache
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\bin\Debug\netcoreapp3.1\Delegats.exe
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\bin\Debug\netcoreapp3.1\Delegats.deps.json
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\bin\Debug\netcoreapp3.1\Delegats.runtimeconfig.json
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\bin\Debug\netcoreapp3.1\Delegats.runtimeconfig.dev.json
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\bin\Debug\netcoreapp3.1\Delegats.dll
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\bin\Debug\netcoreapp3.1\Delegats.pdb
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.csproj.AssemblyReference.cache
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.AssemblyInfoInputs.cache
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.AssemblyInfo.cs
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.csproj.CoreCompileInputs.cache
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.dll
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.pdb
+C:\Users\Демин.Данила\Source\Repos\WhiteDisaste\Delegats\Delegats\obj\Debug\netcoreapp3.1\Delegats.genruntimeconfig.cache

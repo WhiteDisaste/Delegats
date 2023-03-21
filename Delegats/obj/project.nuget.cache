@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UPyKBM4qqzlf7YnNQWwWX0dyuJSULASpoQbvdASTen77rImP4opm4nC2A0m1hliTA2/tIdp6AuFpea2zV7Pt8Q==",
+  "dgSpecHash": "U/UJpazgfPFjGMxxFKXn1eVDOgukXqarXxKRaOc8oTMux+xdQdwi+bPhUGhvPYdL1u1BkmfkNep1fsprMYgU/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ger-m\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\Delegats.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Демин.Данила\\Source\\Repos\\WhiteDisaste\\Delegats\\Delegats\\Delegats.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Демин.Данила\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.30\\microsoft.netcore.app.host.win-x64.3.1.30.nupkg.sha512"
+  ],
   "logs": []
 }

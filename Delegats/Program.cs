@@ -8,7 +8,7 @@ namespace Delegats
     {
         private static WeaponService _weaponService = new WeaponService();
         private static CalculatorService _calculatorService = new CalculatorService();
-        
+        private static LaptopService _laptopService = new LaptopService();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World! Можно использовать калькулятор, он умеет:");
@@ -19,7 +19,10 @@ namespace Delegats
             
             
             operationKey = Console.ReadLine();
+            Console.WriteLine("Введите первую перемену");
             var x = Convert.ToDouble(Console.ReadLine());
+            
+            Console.WriteLine("Введите вторую перемену");
             var y = Convert.ToDouble(Console.ReadLine());
             
             _calculatorService.PerformOperation(operationKey, x, y);
@@ -36,10 +39,6 @@ namespace Delegats
             
              _weaponService.PerformOperation(operationKey, a, b);
             Console.ReadLine();
-        }
-
-        
-       
-        
+        }               
     }
 }
